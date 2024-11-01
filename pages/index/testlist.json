@@ -1,0 +1,174 @@
+[
+    {
+        "title": "泡沫喷淋",
+        "desc": "启动泡沫喷淋，观察泡沫喷淋是否正常",
+        "cmdList": [
+            { "name": "喷泡沫", "cmd": "xp rinser_ctrl bubble_open"},
+            { "name": "停止", "cmd": "xp rinser_ctrl bubble_close"}
+        ],
+        "help": [
+            "泵未打开：检查泵是否开启通电",
+            "电磁阀未打卡或打开错位：检查电气接线是否正常",
+            "结构异常：检查安装是否正常或联系结构工程师"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "清水喷淋",
+        "desc": "启动各路清水喷淋，观察清水喷淋是否正常",
+        "cmdList": [
+            { "name": "打开A路清水", "cmd": "xp rinser_ctrl water_open 1"},
+            { "name": "关闭A路清水", "cmd": "xp rinser_ctrl water_close 1"},
+            { "name": "打开B路清水", "cmd": "xp rinser_ctrl water_open 2"},
+            { "name": "关闭B路清水", "cmd": "xp rinser_ctrl water_close 2"},
+            { "name": "打开C路清水", "cmd": "xp rinser_ctrl water_open 3"},
+            { "name": "关闭C路清水", "cmd": "xp rinser_ctrl water_close 3"},
+            { "name": "打开D路清水", "cmd": "xp rinser_ctrl water_open 4"},
+            { "name": "关闭D路清水", "cmd": "xp rinser_ctrl water_close 4"}
+        ],
+        "help": [
+            "泵未打开：检查泵是否开启通电",
+            "电磁阀未打卡或打开错位：检查电气接线是否正常",
+            "结构异常：检查安装是否正常或联系结构工程师",
+            "其他异常：联系结构工程师处理"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "状态指示灯",
+        "desc": "设置灯的颜色，观察灯的颜色否同设置的一致",
+        "cmdList": [
+            { "name": "红色", "cmd": "xp rinser_ctrl light_set 4"},
+            { "name": "绿色", "cmd": "xp rinser_ctrl light_set 2"},
+            { "name": "蓝色", "cmd": "xp rinser_ctrl light_set 1"},
+            { "name": "关闭", "cmd": "xp rinser_ctrl light_set 0"}
+        ],
+        "help": [
+            "颜色不对：检查接线是否正常及检查灯是否损坏"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "变频器通信",
+        "desc": "根据测试的响应信息，查看变频器通信是否正常",
+        "cmdList": [
+            { "name": "点击测试", "cmd": "xp rinser_ctrl freq_set 0"}
+        ],
+        "help": [
+            "响应信息显示失败：检查485通信线连接是否正常以及检查通信485通信参数与设备ID是否设置正确"
+        ],
+        "needAck": true
+    },
+    {
+        "title": "行走与码盘",
+        "desc": "控制机器前后移动，然后可到状态菜单的输入IO页面判断行走码盘信号是否正常",
+        "cmdList": [
+            { "name": "前进", "cmd": "xp rinser_ctrl forward"},
+            { "name": "后退", "cmd": "xp rinser_ctrl backoff"},
+            { "name": "停止", "cmd": "xp rinser_ctrl stop"}
+        ],
+        "help": [
+            "控制机器无响应：检查电器接线是否正常以及急停按钮是否为释放状态",
+            "变频器有反应但设备不动: 检查电机电器接线及观察是否结构安装导致堵转",
+            "设备响应的距离同实际行走距离不一致：检查码盘传感器接线是否正常及传感器与码盘间的距离是否太大",
+            "其他情况：不满足上述情况，检查传感器是否损坏及联系开发人员处理"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "旋转原点传感器",
+        "desc": "将悬臂控制旋转到原点传感器触发位置，根据状态菜单的输入IO页面判断码盘信号是否正常",
+        "cmdList": [
+            { "name": "顺时针旋转", "cmd": "xp rinser_ctrl turn_right"},
+            { "name": "逆时针旋转", "cmd": "xp rinser_ctrl turn_left"},
+            { "name": "停止旋转", "cmd": "xp rinser_ctrl turn_stop"}
+        ],
+        "help": [
+            "控制机器无响应：检查电器接线是否正常以及急停按钮是否为释放状态",
+            "变频器有反应但设备不动: 检查电机电器接线及观察是否结构安装导致堵转",
+            "原点位置悬臂偏差大：检查结构上的传感器感应片是否安装正常",
+            "其他问题：联系开发人员确认处理"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "旋转与码盘",
+        "desc": "控制悬臂旋转，然后可到状态菜单的输入IO页面判断码盘信号是否正常",
+        "cmdList": [
+            { "name": "顺时针旋转", "cmd": "xp rinser_ctrl turn_right"},
+            { "name": "逆时针旋转", "cmd": "xp rinser_ctrl turn_left"},
+            { "name": "停止旋转", "cmd": "xp rinser_ctrl turn_stop"}
+        ],
+        "help": [
+            "控制机器无响应：检查电器接线是否正常以及急停按钮是否为释放状态",
+            "变频器有反应但设备不动: 检查电机电器接线及观察是否结构安装导致堵转",
+            "码盘传感器没反应：检查接近开关到码盘的距离及电气接线是否正常",
+            "其他问题：联系开发人员确认处理"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "行走限位传感器",
+        "desc": "控制机器分别前进后退到原点传感器限位位置，根据响应信息判断原点传感器是否触发",
+        "cmdList": [
+            { "name": "前进", "cmd": "xp rinser_ctrl forward"},
+            { "name": "后退", "cmd": "xp rinser_ctrl backoff"},
+            { "name": "停止", "cmd": "xp rinser_ctrl stop"}
+        ],
+        "help": [
+            "设备移动到限位位置但传感器未触发：检查传感器到限位挡板的距离是否太远及传感器接线是否正常",
+            "其他情况：不满足上述情况，检查传感器是否损坏及联系开发人员处理"
+        ],
+        "needAck": true
+    },
+    {
+        "title": "急停按钮",
+        "desc": "拍下紧急急停按钮，控制机器移动，正常情况下机器是不会动作的，同时到状态菜单的输入IO页面判断急停按钮是否触发",
+        "cmdList": [
+            { "name": "前进", "cmd": "xp rinser_ctrl forward"},
+            { "name": "后退", "cmd": "xp rinser_ctrl backoff"},
+            { "name": "停止", "cmd": "xp rinser_ctrl stop"},
+            { "name": "停止旋转", "cmd": "xp rinser_ctrl turn_stop"},
+            { "name": "顺时针旋转", "cmd": "xp rinser_ctrl turn_right"},
+            { "name": "逆时针旋转", "cmd": "xp rinser_ctrl turn_left"}
+        ],
+        "help": [
+            "机器仍会动作：检查电气连接是否正常"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "控制按钮",
+        "desc": "拍下急停按钮，点击开始测试，然后依次按面板上的按钮，根据设备响应信息判断按钮是否正常按下及是否一致，测试完成释放急停按钮，点击测试结束",
+        "help": [
+            "响应信息与按钮不对应：检查电气连接是否正常",
+            "无响应信息: 检查电气接线是否正常连接到控制板"
+        ],
+        "needAck": false
+    },
+    {
+        "title": "超声波避障",
+        "desc": "在悬臂两侧使用障碍物阻挡超声波，观察超声波距离变化是否正常",
+        "cmdList": [
+            { "name": "获取超声波距离", "cmd": "xp rinser_sensor ultrasonic_get"}
+        ],
+        "help": [
+            "响应错误信息：检查超声波485通信接线是否正常",
+            "有距离但不会变化：检查超声波模块与探头接线是否错位",
+            "其他情况：检查超声波是否损坏或联系开发人员协助处理"
+        ],
+        "needAck": true
+    },
+    {
+        "title": "4G联网功能",
+        "desc": "发送测试命令，根据响应信息判断4G是否入网成功正常",
+        "cmdList": [
+            { "name": "4G入网测试", "cmd": "xp rinser_net 4g_status"}
+        ],
+        "help": [
+            "未正常入网：检查SIM卡是否正常插入、天线是否连接正常",
+            "其他情况：换SIM卡测试或联系开发人员协助处理"
+        ],
+        "needAck": true
+    }
+]

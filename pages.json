@@ -1,0 +1,123 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/SwiftHome",
+			"style": {
+				"navigationBarTitleText": "基础操作",
+				"usingComponents": {
+					"bluetooth-link": "/components/bluetooth-link",
+					"switch-button": "/components/switch-button",
+					"wifi-link": "/components/wifi-link"
+				}
+			}
+		},
+		{
+			"path": "pages/index/SwiftStatus",
+			"style": {
+				"navigationBarTitleText": "设备状态",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							// "text": "监听",
+							"type":"menu",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "32px",
+							"color": "#FFFFFF"
+						}]
+					}
+				},
+				"usingComponents": {
+					"io-watch": "/components/io-watch",
+					"io-output": "/components/io-output",
+					"log-show": "/components/log-show",
+					"echarts": "/components/echarts",
+					"oscilloscope": "/components/oscilloscope"
+				}
+			}
+		},
+		{
+			"path": "pages/index/SwiftConfig",
+			"style": {
+				"navigationBarTitleText": "参数配置"
+			}
+		},
+		{
+			"path": "pages/index/SwiftTest",
+			"style": {
+				"navigationBarTitleText": "功能测试"
+			}
+		},
+		{
+            "path" : "pages/DeviceLink/DeviceLink",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "连接蓝牙设备",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+			"path": "pages/index/test",
+			"style": {
+				"navigationBarTitleText": "测试"
+			}
+		}
+    ],
+	"globalStyle": {
+		// "navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#007AFF",
+		"navigationBarTextStyle":"white",
+		"backgroundColor": "#F8F8F8",
+		"usingComponents": {
+			"van-button": "/wxcomponents/vant/dist/button/index",
+			"echarts": "/components/echarts",
+			"test":"/components/test"
+		}
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^van-(.*)": "@/wxcomponents/vant/dist/$1/index.vue"
+		}
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/index/SwiftHome",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/index/SwiftStatus",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/apiHL.png",
+				"text": "状态"
+			}, {
+				"pagePath": "pages/index/SwiftConfig",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
+				"text": "配置"
+			}, {
+				"pagePath": "pages/index/SwiftTest",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "测试"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}
